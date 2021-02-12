@@ -4,9 +4,16 @@ class Counter extends Component {
     state = {
         count: 0,
     }
-    handleIncrement() {
-        console.log('clicked')
+
+    // constructor() {
+    //     super()
+    //     this.handleIncrement = this.handleIncrement.bind(this)
+    // }
+
+    handleIncrement = () => {
+        this.setState({ count: this.state.count + 1 })
     }
+
     render() {
         return (
             <div className="container">
@@ -24,7 +31,7 @@ class Counter extends Component {
     }
     getButtonClasses() {
         let cssClasses = 'badge m-2 badge-'
-        cssClasses += this.state.count === 0 ? 'warning' : 'primary'
+        cssClasses += this.state.count === 0 ? 'warning' : 'primary p-2'
         return cssClasses
     }
 
